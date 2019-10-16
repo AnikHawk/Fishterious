@@ -1,0 +1,69 @@
+
+void howto()
+{
+    int frm=0,pg=0;
+    POINT mouse;
+    int x,y,clkx=0,clky=0;
+
+    while(1)
+    {
+
+        GetCursorPos(&mouse);
+
+
+        x=mouse.x;
+        y=mouse.y;
+        getmouseclick(WM_LBUTTONDOWN, clkx, clky);
+
+
+        setactivepage(pg);
+        setvisualpage(1-pg);
+
+
+        if(x>=298 && x<=365 && y>=432 && y<=497)
+        {
+            if(frm%11==0) readimagefile("0hom.jpg",0,0,640,480);
+            if(frm%11==1) readimagefile("1hom.jpg",0,0,640,480);
+            if(frm%11==2) readimagefile("2hom.jpg",0,0,640,480);
+            if(frm%11==3) readimagefile("3hom.jpg",0,0,640,480);
+            if(frm%11==4) readimagefile("4hom.jpg",0,0,640,480);
+            if(frm%11==5) readimagefile("5hom.jpg",0,0,640,480);
+            if(frm%11==6) readimagefile("6hom.jpg",0,0,640,480);
+            if(frm%11==7) readimagefile("7hom.jpg",0,0,640,480);
+            if(frm%11==8) readimagefile("8hom.jpg",0,0,640,480);
+            if(frm%11==9) readimagefile("9hom.jpg",0,0,640,480);
+            if(frm%11==10) readimagefile("10hom.jpg",0,0,640,480);
+            // delay(100);
+
+
+            if(clkx>=296 && clkx<=361 && clky>=437 && clky<=470) menu();
+        }
+        else
+        {
+            if(frm%11==0) readimagefile("0.jpg",0,0,640,480);
+            if(frm%11==1) readimagefile("1.jpg",0,0,640,480);
+            if(frm%11==2) readimagefile("2.jpg",0,0,640,480);
+            if(frm%11==3) readimagefile("3.jpg",0,0,640,480);
+            if(frm%11==4) readimagefile("4.jpg",0,0,640,480);
+            if(frm%11==5) readimagefile("5.jpg",0,0,640,480);
+            if(frm%11==6) readimagefile("6.jpg",0,0,640,480);
+            if(frm%11==7) readimagefile("7.jpg",0,0,640,480);
+            if(frm%11==8) readimagefile("8.jpg",0,0,640,480);
+            if(frm%11==9) readimagefile("9.jpg",0,0,640,480);
+            if(frm%11==10) readimagefile("10.jpg",0,0,640,480);
+            // delay(100);
+        }
+
+        if(clkx!=-1 && clky!=-1) printf("%d %d\n",clkx,clky);
+        //printf("%d %d\n",x,y);
+
+
+
+        frm++;
+        pg=1-pg;
+    }
+
+
+
+
+}

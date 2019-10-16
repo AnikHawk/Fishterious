@@ -1,0 +1,11 @@
+playera 510
+Abcdef 120
+playerc 50
+playerd 50
+PlayerC 0
+PlayerD 0
+PlayerE 0
+PlayerE 0
+abcd 0
+student 0
+playerm 0

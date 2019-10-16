@@ -1,0 +1,63 @@
+
+void menu()
+{
+
+    POINT mouse;
+    int x,y,clkx=0,clky=0;
+
+
+
+    while(1)
+    {
+        GetCursorPos(&mouse);
+
+
+        x=mouse.x;
+        y=mouse.y;
+        getmouseclick(WM_LBUTTONDOWN, clkx, clky);
+
+       //if(clkx!=-1 && clky!=-1) printf("%d %d\n",clkx,clky);
+        //printf("%d %d\n",x,y);
+
+
+        //NEW GAME
+        if(clkx>=250 && clkx<=460 && clky>=95 && clky<=150)
+        {
+
+            game();
+            return;
+        }
+
+
+        //HOW TO PLAY
+         if(clkx>=286 && clkx<=411 && clky>=177 && clky<=231)
+         {
+           howto();
+
+         }
+
+        //HIGH SCORE
+        if(clkx>=246 && clkx<=469 && clky>=259 && clky<=309)
+        {
+             readimagefile("sea.jpg",0,0,640,480) ;
+             delay(1000);
+        }
+
+
+         //EXIT
+        if(clkx>=290 && clkx<=408 && clky>336 && clky<400) break;
+
+        if(x>252 && x<462 && y>120 && y<178)  readimagefile("menunewgame.jpg",-50,-40,690,520);
+        else if(x>287 && x<415 && y>203 && y<261)  readimagefile("menuhelp.jpg",-50,-40,690,520);
+        else if(x>247 && x<473 && y>284 && y<343)  readimagefile("menuhighscore.jpg",-50,-40,690,520);
+        else if(x>292 && x<413 && y>360 && y<428)  readimagefile("menuexit.jpg",-50,-40,690,520);
+        else readimagefile("menu.jpg",-50,-40,690,520);
+
+
+
+        page=1-page;
+    }
+
+}
+
+
